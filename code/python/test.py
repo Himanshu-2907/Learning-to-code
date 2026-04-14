@@ -34,3 +34,8 @@ def fun(variable):
         return True
     else:
         return False
+seq=['g','e','e','k','s','f','o','r','g','e','e','k','s']
+filtered=filter(fun,seq)
+print('Filtered letters:')
+for s in filtered:
+    print(s)
