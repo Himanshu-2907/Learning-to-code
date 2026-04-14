@@ -39,3 +39,11 @@ filtered=filter(fun,seq)
 print('Filtered letters:')
 for s in filtered:
     print(s)
+
+#Lambda functions
+
+cube=lambda x:x*x*x
+print(cube(5))
+L=[1,2,3,4,5]
+is_even=[x for x in L if x%2==0] #from all the elements in L keep the x only if it is even
+print(is_even)
