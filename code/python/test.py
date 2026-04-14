@@ -53,3 +53,9 @@ from functools import reduce
 a=["Get","Set","go"]
 r=reduce(lambda x,y:x+" "+y,a)
 print(r)
+
+#-->if not used lambda function
+result=a[0]
+for i in a[1:]:
+    result=result+" "+i
+print(result)
