@@ -11,6 +11,7 @@ def greet(func):
   
 greet(shout) 
 greet(whisper)
+
 #map functions
 def addition(n): 
     return n + n 
@@ -25,3 +26,11 @@ print(results)
 # For Printing value
 for result in results:
     print(result, end = " ")
+
+# filters functions
+def fun(variable):
+    letters=('a','e','i','o','u')
+    if(variable in letters):
+        return True
+    else:
+        return False
