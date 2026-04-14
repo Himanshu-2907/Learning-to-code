@@ -59,3 +59,14 @@ result=a[0]
 for i in a[1:]:
     result=result+" "+i
 print(result)
+
+a1=[1,2,3,4]
+r1=reduce(lambda x,y:x+y,a1)
+print(r1)
+
+def add_three(a, b, c):
+    for i in range(len([1,2])):
+        z=a+b+c
+        print(z)
+        return a + b + c
+list(map(add_three, [1, 2], [10, 20], [100, 200]))
