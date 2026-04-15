@@ -99,3 +99,20 @@ def greet(name):
 
 greet("Himanshu")
 
+#generators and iterators
+num=[1,2,3,4,5]
+it=iter(num)
+print(next(it))
+print(next(it))
+print(next(it))
+
+#->generators
+print('generators')
+def gen():
+    print('start')
+    yield 1
+    print('mid')    
+    yield 2
+g=gen()
+print(next(g))
+print(next(g))
