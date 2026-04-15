@@ -116,3 +116,4 @@ def gen():
 g=gen()
 print(next(g))
 print(next(g))
+
