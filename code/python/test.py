@@ -84,3 +84,18 @@ def say_hello():
     print("Hello!")
 
 say_hello()
+
+
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before function runs")
+        func(*args, **kwargs)
+        print("After function runs")
+    return wrapper
+
+@decorator
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Himanshu")
+
