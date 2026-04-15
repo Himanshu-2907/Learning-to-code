@@ -70,3 +70,17 @@ def add_three(a, b, c):
         print(z)
         return a + b + c
 list(map(add_three, [1, 2], [10, 20], [100, 200]))
+
+#decorators
+def my_decorator(func):
+    def wrapper():
+        print("Something before the function.")
+        func()
+        print("Something after the function.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
