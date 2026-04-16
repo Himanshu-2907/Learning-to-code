@@ -136,11 +136,46 @@ print(check_occ(hs,n))
 
 
 #restart and build on knowledge
+"""__init__ method is used to assign values to object
+ properties, this method is called
+when new object is created 
+self parameter is reference to current instance of the class, without it 
+python wouldn't know about project properties"""
 class Person:
   def __init__(self,name,age):
      self.name=name
      self.age=age
   def greet(self):
-     print("Hello my name is: ",self.name)
+     print("Hello "+ self.name)
+     return self.name
+  def welcome(self):
+      message=self.greet()
+      print(message,"! Welocme to this page",self.age)
 p1=Person("john",36)
-p1.greet()
+p1.welcome()
+
+class Student():
+    def __init__(self,name,age=19):
+        self.name=name
+        self.age=age
+p1=Student('Emil')
+print(p1.name)
+print(p1.age)
+
+#class properties and object properties
+"""property defined under __init__ belongs to the
+ class's instance the objects  """
+""" Properties defined outside the methods 
+belong to the class, these properties are shared by all the objects"""
+
+class Person:
+    def __init__(self, name):
+        #print(p1.city) gives error as city is not passsed as a parameter
+        self.name=name
+p1=Person("Carl")
+p1.city="Oslo" #this adds the attribute only to p1 object of the class not the other objects
+print(p1.name)
+p2=Person("Shyam")
+p2.age="29"
+print(p2.age)
+#print(p2.city) error: p2 object has no attribute city
