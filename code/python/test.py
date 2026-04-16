@@ -342,7 +342,7 @@ for x in (car1,boat1,plane1):
     print(x.brand,x.name," - ")
     x.move()  
 
-#getter
+#getter/setter
 class person:
     def __init__(self,name,age):
         self.name=name
@@ -360,6 +360,7 @@ print("age",p1.get_age())
 p1.set_age(26)
 print("update age ",p1.get_age())
 
+#Inner class
 class Outer:
     def __init__(self):
         self.name='Emil'
@@ -372,6 +373,7 @@ class Outer:
 outer=Outer()
 inner=outer.Inner(outer)
 inner.display()
+
 
 
 class Car:
