@@ -236,3 +236,39 @@ time1=time()
 time1.hours=7
 time1.mins=15
 time1.print_time(8,30)
+
+class Person:
+    def __init__(self,name):
+        self.name=name
+    def get_name(self):
+        return self.name
+    def isEmployee(self):
+        return False
+class Employee(Person):
+    def isEmployee(self):
+        return True
+print(issubclass(Employee,Person)) #imp to check if a class is derived or not
+print(issubclass(Person,Employee))
+
+emp=Person("himanshu")
+print(emp.get_name(),emp.isEmployee())
+emp=Employee("Himanshu")
+print(emp.get_name(),emp.isEmployee())
+
+class Base1:
+    def __init__(self):
+        self.str1="Base1"
+        print("u1")
+class Base2:
+    def __init__(self):
+        self.str2="base2"
+        print("u1")
+class Derived(Base1,Base2):
+    def __init__(self):
+        Base1.__init__(self)
+        Base2.__init__(self)
+        print("Derived")
+    def printstr(self):
+        print(self.str1,self.str2)
+ob=Derived()
+ob.printstr()
