@@ -137,7 +137,7 @@ print(check_occ(hs,n))
 
 #restart and build on knowledge
 """__init__ method is used to assign values to object
- properties, this method is called
+ properties, it's a consturtor and initializes the instance, this method is called
 when new object is created 
 self(like an object itself) parameter is reference to current instance of the class, without it 
 python wouldn't know about project properties"""
@@ -209,7 +209,7 @@ class Person:
 class Student(Person):
     def __init__(self,fname,lname,year):
         #Person.__init__(self,fname,lname)
-        Person.__init__(fname,lname)  # this method is used to access and initialize the attributes of parent class
+        super().__init__(fname,lname)  # this method is used to access and initialize the attributes of parent class
         #self.graduationyear=2019
         self.graduationyear=year
     def welcome(self):
@@ -218,3 +218,21 @@ class Student(Person):
 
 x=Student('him','anshu',2025)
 x.welcome()
+
+class time:
+    def __init__(self):
+        self.hours=0
+        self.mins=0
+    def print_time(self,hr,mn):
+        self.hr=hr
+        self.mn=mn
+        print('start time is ')
+        print('hours: ',self.hours)
+        print('minutes: ',self.mins)
+        print('after 75 minutes')
+        print('hours ',self.hr)
+        print('minutes ',self.mn)
+time1=time()
+time1.hours=7
+time1.mins=15
+time1.print_time(8,30)
