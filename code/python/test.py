@@ -198,6 +198,9 @@ class person:
 p1=person("Emil",23)
 print(p1)
 
+#Inheritance
+
+
 class Person:
   def __init__(self, fname, lname):
     self.firstname = fname
@@ -272,3 +275,78 @@ class Derived(Base1,Base2):
         print(self.str1,self.str2)
 ob=Derived()
 ob.printstr()
+
+class Person(object):
+	def __init__(self,name):
+		self.name=name
+	def getName(self):
+		return self.name
+	def isEmployee(self):
+		return False
+class Employee(Person):
+	def __init__(self,name,eid):
+		super(Employee,self).__init__(name)
+		self.empID=eid
+	def isEmployee(self):
+		return True
+	def getID(self):
+		return self.empID
+emp=Employee("Geek1","E101")
+print(emp.getName(),emp.isEmployee(),emp.getID())
+
+#Polymorphism
+
+class Car:
+    def __init__(self,brand,name):
+        self.name=name
+        self.brand=brand
+    def move(self):
+        print('drive')
+class boat:
+    def __init__(self,brand,name):
+        self.name=name
+        self.brand=brand
+    def move(self):
+        print('float')
+class plane:
+    def __init__(self,brand,name):
+        self.name=name
+        self.brand=brand
+    def move(self):
+        print('fly')
+car1=Car('ford','bronco')
+boat1=boat('porsche','frauscher')
+plane1=plane('boieng','747')
+for x in (car1,boat1,plane1):
+    print(x.brand,x.name," - ")
+    x.move()
+
+class vehicle:
+    def __init__(self,brand,name):
+        self.brand=brand
+        self.name=name
+    def move(self):
+        print('move')
+class Car(vehicle):
+    pass
+class boat(vehicle):
+    def move(self):
+        print('float')
+class plane(vehicle):
+    def move(self):
+        print('fly')
+car1=Car('ford','bronco')
+boat1=boat('porsche','frauscher')
+plane1=plane('boieng','747')
+for x in (car1,boat1,plane1):
+    print(x.brand,x.name," - ")
+    x.move()  
+
+#getter
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.__age=age
+    def get_age(self):
+        self.__age
+p1=person('sanya','19')
