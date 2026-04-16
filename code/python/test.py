@@ -348,5 +348,54 @@ class person:
         self.name=name
         self.__age=age
     def get_age(self):
-        self.__age
+        return self.__age
+    def set_age(self,age):
+        if age>0:
+            self.__age=age
+        else:
+            print('age must be positive')
+
 p1=person('sanya','19')
+print("age",p1.get_age())
+p1.set_age(26)
+print("update age ",p1.get_age())
+
+class Outer:
+    def __init__(self):
+        self.name='Emil'
+    class Inner:
+        def __init__(self,outer):
+            self.outer=outer
+        def display(self):
+            print(f"This is the inner class {self.outer.name}")
+
+outer=Outer()
+inner=outer.Inner(outer)
+inner.display()
+
+
+class Car:
+    def __init__(self,name,model):
+        self.name=name
+        self.model=model
+        self.engine=self.Engine()
+    class Engine:
+        def __init__(self):
+            self.status="off"
+        def start(self):
+            self.status="running"
+            print("The engine is running")
+        def stop(self):
+            self.status="off"
+            print("The engine is off")
+    def drive(self):
+        if self.engine.status=="running":
+            print(f"the {self.name} {self.model} can move")
+        else:
+            print("the car cannot move")
+c1=Car('ford','bronco')
+c1.drive()
+c1.engine.start()
+c1.drive()
+
+    
