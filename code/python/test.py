@@ -139,7 +139,7 @@ print(check_occ(hs,n))
 """__init__ method is used to assign values to object
  properties, this method is called
 when new object is created 
-self parameter is reference to current instance of the class, without it 
+self(like an object itself) parameter is reference to current instance of the class, without it 
 python wouldn't know about project properties"""
 class Person:
   def __init__(self,name,age):
@@ -179,3 +179,42 @@ p2=Person("Shyam")
 p2.age="29"
 print(p2.age)
 #print(p2.city) error: p2 object has no attribute city
+
+class Calculator:
+    def add(self,a,b):
+        return a+b
+    def multiply(self,a,b):
+        return a*b
+calc=Calculator()
+print(calc.add(2,3))
+print(calc.multiply(2,3))
+
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def __str__(self):
+        return f"{self.name} {self.age}"
+p1=person("Emil",23)
+print(p1)
+
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+class Student(Person):
+    def __init__(self,fname,lname,year):
+        #Person.__init__(self,fname,lname)
+        Person.__init__(fname,lname)  # this method is used to access and initialize the attributes of parent class
+        #self.graduationyear=2019
+        self.graduationyear=year
+    def welcome(self):
+        print(f"Welcome {self.firstname}{self.lastname} a {self.graduationyear} graduate")
+#Use the Person class to create an object, and then execute the printname method:
+
+x=Student('him','anshu',2025)
+x.welcome()
