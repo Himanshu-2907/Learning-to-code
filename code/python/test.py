@@ -117,3 +117,30 @@ g=gen()
 print(next(g))
 print(next(g))
 
+
+class car():
+    def __init__(self,name,model):
+        self
+
+
+def check_occ(hs,n):
+    hs1=len(hs)
+    n1=len(n)
+    for i in range(hs1-n1+1):
+        if(hs[i:i+n1]==n):
+            return i
+    return -1
+n='sad'
+hs='sadbutsad'
+print(check_occ(hs,n))
+
+
+#restart and build on knowledge
+class Person:
+  def __init__(self,name,age):
+     self.name=name
+     self.age=age
+  def greet(self):
+     print("Hello my name is: ",self.name)
+p1=Person("john",36)
+p1.greet()
