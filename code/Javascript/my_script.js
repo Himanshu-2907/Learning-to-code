@@ -82,8 +82,8 @@ function getHumanChoice(){
     else 
         return "scissors";
 }
-let h=prompt("Enter your choice: rock, paper or scissors")
-console.log(getHumanChoice(h))
+//let h=prompt("Enter your choice: rock, paper or scissors")
+/*console.log(getHumanChoice(h))
 function playGame(){
 let humanscore=0;
 let globalscore=0;
@@ -191,3 +191,54 @@ function setWeaether(){
     para.textContent='It is a nice and sunny day'
 
 }  */
+
+
+//the odin project object basics module
+const obj1={'data':32}
+const objcopy=obj1
+console.log(obj1)
+objcopy.data=43
+console.log(objcopy)
+
+function sumofTripledevens(array){
+    let sum=0
+    for(let i=0;i<array.length;i++)
+    {
+        if(array[i]%2==0)
+        {
+            const tripleEventNumber=array[i]*3;
+            sum+=tripleEventNumber;
+        }
+    }
+    return sum;
+}
+const ar=[1,2,3,4,5]
+const oddnums=ar.reduce((total,currentItem)=>{ return total*currentItem;},1);
+console.log(oddnums)
+function filterRange(arr,a,b){
+    return arr.filter(item=>(a<=item && item<=b));
+}
+let arrr=[5,3,7,1]
+let filtered=filterRange(arrr,1,4)
+console.log(filtered)
+console.log(arrr)
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr12 = [ john, pete, mary ];
+
+
+const arr123=['apple','banana','pear','kiwi']
+console.log(arr123)
+console.log(arr123.length)
+
+const myobj={
+    property: 'value',
+    price: 77,
+    "property price as per size": function(){}
+}
+
+console.log(myobj.property)
+console.log(myobj["property price as per size"])
