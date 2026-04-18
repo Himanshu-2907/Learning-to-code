@@ -242,3 +242,46 @@ const myobj={
 
 console.log(myobj.property)
 console.log(myobj["property price as per size"])
+
+const car={
+    make: "Volkswagen",
+    model: "Golf",
+    year: 2026,
+    color: "blue",
+    priceUSD: 40000,
+
+  aplydisc:function(discountpercent)
+  {
+    const multiplier=1-discountpercent
+    this.priceUSD*=multiplier;
+  },
+  summary()
+  {
+    return `${this.year} ${this.make} in ${this.color}`
+  }
+}
+
+const reps={
+    playerscore:0,
+    computerscore:0,
+    playround(playerchoice){
+
+    },
+
+getwinningplayer(){
+
+},
+reset(){
+
+},
+};
+reps.playround('rock');
+console.log(reps.playerscore)
+reps.playround('rock')
+console.log(reps.computerscore)
+reps.playround('scissors')
+console.log(reps.playerscore)
+console.log(reps.getwinningplayer())
+reps.reset()
+console.log(reps.playerscore)
+console.log(reps.computerscore)
