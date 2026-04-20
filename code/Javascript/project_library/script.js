@@ -1,0 +1,12 @@
+const library=[];
+function book(title,author,pages,read){
+    this.id=crypto.randomUUID()  //uses crypto api to generate unique id string (UUID v4)
+    this.title=title
+    this.author=author
+    this.pages=pages
+    this.read=read
+}
+function addbooktolibrary(title,author,pages,read){
+    const book = new book(title,author,pages,read)
+    mylibrary.push(book)
+}
