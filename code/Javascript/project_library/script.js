@@ -6,7 +6,9 @@ function book(title,author,pages,read){
     this.pages=pages
     this.read=read
 }
-function addbooktolibrary(title,author,pages,read){
+function addBookToLibrary(title,author,pages,read){
     const book = new book(title,author,pages,read)
     mylibrary.push(book)
 }
+addBookToLibrary("One Piece","Oda",1000,true)
+console.log(mylibrary)
