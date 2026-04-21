@@ -1,4 +1,4 @@
-/*const mylibrary=[];
+const mylibrary=[];
 function Book(title,author,pages,read){
     this.id=crypto.randomUUID()  //uses crypto api to generate unique id string (UUID v4)
     this.title=title
@@ -52,4 +52,3 @@ document.getElementById("bookForm").addEventListener("submit",function(e)
     addBookToLibrary(title,author,pages,read);
     displayBooks();
 })
-    */
