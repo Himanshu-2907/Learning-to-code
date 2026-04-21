@@ -1,6 +1,6 @@
 const boxes=Array.from(document.getElementsByClassName('box'));
 console.log(boxes);
-
+const playText=document.getElementById('playText')
 const spaces=[null,null,null,null,null,null,null,null,null];
 const text_O="O"
 const text_X="X"
@@ -40,7 +40,33 @@ const boxclicked=(e)=>
     if(!spaces[id]){
         spaces[id]=currentPlayer
         e.target.innerText=currentPlayer
+        if(playerWon())
+        {
+            playText.innerText=`${currentPlayer} has won`
+        }
         currentPlayer=currentPlayer=== text_O ? text_X : text_O
+    }
+}
+const playerWon=()=>
+{
+    if(spaces[0]==currentPlayer)
+    {
+        if(spaces[1]==currentPlayer && spaces[2]==currentPlayer){
+            console.log(`${currentPlayer} wins up top`)
+            return True
+        }
+        if(spaces[3]==currentPlayer && spaces[6]==currentPlayer){
+            console.log(`${currentPlayer} wins on the left`)
+            return True
+        }
+        if(spaces[4]==currentPlayer && spaces[8]==currentPlayer){
+            console.log(`${currentPlayer} wins diagonally`)
+            return True
+        }
+        if(spaces[1]==currentPlayer && spaces[2]==currentPlayer){
+            console.log(`${currentPlayer} wins up top`)
+            return True
+        }
     }
 }
 drawBoard();
