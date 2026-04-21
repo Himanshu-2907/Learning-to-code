@@ -53,19 +53,26 @@ const playerWon=()=>
     {
         if(spaces[1]==currentPlayer && spaces[2]==currentPlayer){
             console.log(`${currentPlayer} wins up top`)
-            return True
+            return true
         }
         if(spaces[3]==currentPlayer && spaces[6]==currentPlayer){
             console.log(`${currentPlayer} wins on the left`)
-            return True
+            return true
         }
         if(spaces[4]==currentPlayer && spaces[8]==currentPlayer){
             console.log(`${currentPlayer} wins diagonally`)
-            return True
+            return true
         }
-        if(spaces[1]==currentPlayer && spaces[2]==currentPlayer){
-            console.log(`${currentPlayer} wins up top`)
-            return True
+    }
+    else if(spaces[8]==currentPlayer)
+    {
+        if(spaces[5]==currentPlayer && spaces[2]==currentPlayer){
+            console.log(`${currentPlayer} wins on the right`)
+            return true
+        }
+        if(spaces[7]==currentPlayer && spaces[6]==currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom`)
+            return true
         }
     }
 }
