@@ -52,33 +52,4 @@ document.getElementById("bookForm").addEventListener("submit",function(e)
     addBookToLibrary(title,author,pages,read);
     displayBooks();
 })
-
-//constructors don't provide safeguard
-/*
-const me ={
-    name:"sina",
-    talk() {
-    return `Hello I am ${this.name}`
-    }
-}
-const ben ={
-    name="Ben",
-    talk(){
-    return `Hello I am ${this.name}`
-    }
-
-}
-me.talk()
-ben.talk()
-*/
-function personFactory(name)
-{ 
-    return {
-        talk()
-        {
-            return `Hello I am ${name}`
-        }
-        }
-    }
-const me=personFactory("sina")
-me.talk()
+    */

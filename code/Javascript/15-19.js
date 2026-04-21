@@ -285,3 +285,6 @@ console.log(reps.getwinningplayer())
 reps.reset()
 console.log(reps.playerscore)
 console.log(reps.computerscore)
+
+export const greeting="Hello there"
+export const farewell="Bye bye"

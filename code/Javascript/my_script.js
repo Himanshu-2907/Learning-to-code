@@ -64,3 +64,68 @@ player3.sayName()
 player4.sayName()
 player3.getMarker()
 player4.getMarker()
+
+//constructors don't provide safeguard
+/*
+const me ={
+    name:"sina",
+    talk() {
+    return `Hello I am ${this.name}`
+    }
+}
+const ben ={
+    name="Ben",
+    talk(){
+    return `Hello I am ${this.name}`
+    }
+
+}
+me.talk()
+ben.talk()
+*/
+function personFactory(name)
+{ 
+    return {
+        talk()
+        {
+            return `Hello I am ${name}`
+        }
+        }
+    }
+const me=personFactory("sina")
+me.talk()
+
+// factoty functions :- it creates and returns an object
+function User(name){
+    this.name=name
+}
+function createUser(name){
+    const discordname="@"+name
+    let reputation=0; //this is the key
+    const getReputation=()=> reputation;   //these are closures
+    const giveReputation=()=> {reputation++};  //these are closure
+    //thesee are closures because even after createuser scope is finisdhed they can use reputation
+    return {name,discordname,getReputation,giveReputation}
+}
+const josh=createUser("josh")
+josh.giveReputation()
+josh.getReputation()
+console.log({
+    discordname:josh.discordname,
+    reputation:josh.getReputation()
+});
+
+//Immediately inoked function expression (IIFE)
+
+() =>  console.log("foo");
+
+//ES6 modules released in 2015 introduced some new features including the concept of models
+// which are a set of syntax for importing and exporting code 
+//between different javascript files
+
+
+import {greeting,farewell} from "./15-19.js"
+console.log(greeting,farewell)
+// so export a function of variable from 15-19.js file, import in this file and change the html code from 
+//<script src="script.js"></script>    to   <script type="module" src="script.js"></script>
+
