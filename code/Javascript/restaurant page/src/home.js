@@ -1,8 +1,8 @@
 function createHomePage(){
-    const homeDiv=document.createElement('di')
+    const homeDiv=document.createElement('div')
     homeDiv.classList.add('home-content')
     const headline=document.createElement('h1')
-    headline.textContent='Welcome to the Flavor Inventory'
+    headline.textContent='Welcome to the Flavors and Beyond'
     headline.classList.add('headline')
     const subheadline=document.createElement('p')
     subheadline.textContent="Where every bit tells a story"
@@ -14,12 +14,12 @@ function createHomePage(){
     description.classList.add('description')
     const hoursTitle=document.createElement('h2')
     hoursTitle.textContent='Hours'
-    const hoursList=document.createElement('u1')
-    hoursList.createList.add('hours-list')
+    const hoursList=document.createElement('ul')
+    hoursList.classList.add('hours-list')
     const hours=[
         'Monday-Thursday: 11am-10pm',
         'Friday-Saturday: 11am-11pm',
-        'Sunday; 12pm -8pm'
+        'Sunday: 12pm -8pm'
     ]
     hours.forEach(hour=>
     {
@@ -30,6 +30,15 @@ function createHomePage(){
     const locationTitle=document.createElement('h2')
     locationTitle.textContent='Location'
     const locationText=document.createElement('p')
-    location.textContent='123 Foodie Street, Culinary District, Food City, FC 1234'
+    locationText.textContent='123 Foodie Street, Culinary District, Food City, FC 1234'
     locationText.classList.add('location')
+    homeDiv.appendChild(headline)
+    homeDiv.appendChild(subheadline)
+    homeDiv.appendChild(description)
+    homeDiv.appendChild(hoursTitle)
+    homeDiv.appendChild(hoursList)
+    homeDiv.appendChild(locationTitle)
+    homeDiv.appendChild(locationText)
+    return homeDiv
 }
+export default createHomePage
