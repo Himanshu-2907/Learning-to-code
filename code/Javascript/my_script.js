@@ -1,3 +1,4 @@
+/*
 console.log('hello world')
 //object constructors
 function Player(name,marker){    //constructor fn since used with new(creates obj links prototype call fn with obj and return obj)
@@ -18,7 +19,7 @@ player1.sayHello()
 /* .prototype for determinig new object's instance set to when fn 
 called with new
  not for accessing an object prototype
-*/
+
 
 
 //prototypal inheritance
@@ -41,7 +42,7 @@ Player.prototype
 Object.prototype
   ↓
 null
-*/
+
 
 // inheritance in action from player above
 function Person(name){
@@ -82,7 +83,7 @@ const ben ={
 }
 me.talk()
 ben.talk()
-*/
+
 function personFactory(name)
 { 
     return {
@@ -128,4 +129,30 @@ import {greeting,farewell} from "./15-19.js"
 console.log(greeting,farewell)
 // so export a function of variable from 15-19.js file, import in this file and change the html code from 
 //<script src="script.js"></script>    to   <script type="module" src="script.js"></script>
+*/
 
+//22 April
+//Single Responsibility
+
+class Car{
+    constructor(make,model,fuel){
+        this.make=make
+        this.model=model
+        this.fuel=fuel
+    }
+    start(){
+        if(this.fuel>0)
+        {
+            console.log(`The car ${this.make} ${this.model} started`)
+            return true
+        }
+        console.log(`The car ${this.make} ${this.model} failed to start`)
+        return false
+    }
+    errorLog(message)
+    {
+        console.log(message)
+    }
+}
+const car1=new Car('toyota','supra',50)
+car1.start()
