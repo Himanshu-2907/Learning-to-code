@@ -156,3 +156,30 @@ class Car{
 }
 const car1=new Car('toyota','supra',50)
 car1.start()
+
+
+//callbacks
+function doSomething(callback){
+
+    console.log('1. Doing someting')
+    callback()
+    console.log('3. Done')
+}
+function sayHello(){
+    console.log('2.Hello from callback')
+}
+doSomething(sayHello)
+
+//calling back with data
+function fetchUserData(callback){
+    console.log('Fetching user')
+    setTimeout(()=>  //runs the code after a delay or after the current code finishes
+    {
+        const user={name:'Alice',age:25}
+        callback(user)
+    })
+}
+fetchUserData(function(user)
+{
+    console.log('Received user',user)
+})
