@@ -183,3 +183,45 @@ fetchUserData(function(user)
 {
     console.log('Received user',user)
 })
+
+
+//callback hell
+
+function getuser(userid,callback)
+{
+    setTimeout(()=> callback({id:userid,name:'Bob'}),1000)
+}
+function getposts(userid,callback){
+    setTimeout(()=>callback(['Post 1','Post 2']),1000)
+}
+function getcomments(post,callback)
+{
+    setTimeout(()=> callback(['Comments 1','Comments 2']),1000)
+}
+getuser(1,(user)=>{
+    console.log('User',user)
+    getposts(user.id,(posts)=>
+    {
+        console.log('Posts',posts)
+        getcomments(posts[0],(comments)=>
+        {
+            console.log('Comments',comments)
+        })
+    })
+
+})
+//first all 3 functions are recognized not exectued
+//then getuser gets called passes userid 1 then settimeout is called
+//but callback is not executed yet, it waits 1 sec and moves to the next line
+// then callback fun executes and after 1 sec callback receives user from getuser
+// we have the output User { id: 1, name: 'Bob' } after 1 sec
+// getposts with userid 1, the other callback works after setTimout of 1 sec (repeats)
+
+//Promises
+
+const mypromise=new Promise((resolve,reject)=>{
+    resolve('Succes')
+})
+mypromise.then((data)=>{    //.then runs after a promise is completed
+    console.log(data)
+})
