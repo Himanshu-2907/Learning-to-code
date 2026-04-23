@@ -288,3 +288,81 @@ console.log(reps.computerscore)
 
 export const greeting="Hello there"
 export const farewell="Bye bye"
+
+//for revision/ reference->
+/*
+
+Step 1: getUser(1) is called
+        ↓
+Step 2: Creates a new Promise
+        ↓
+Step 3: setTimeout schedules work for 1 second later
+        ↓
+Step 4: The Promise is RETURNED immediately (still pending)
+        ↓
+        --- 1 second passes ---
+        ↓
+Step 5: setTimeout's timer finishes
+        ↓
+Step 6: The arrow function runs: () => resolve(...)
+        ↓
+Step 7: resolve() is called with { id: 1, name: "Bob" }
+        ↓
+Step 8: The Promise is now fulfilled with that object
+        ↓
+Step 9: Any .then() callbacks run with that object
+
+
+*/
+
+// DEMO 1: Basic async/await
+async function demo1() {
+    return "Hello";
+}
+demo1().then(console.log); // "Hello"
+
+// DEMO 2: await with setTimeout
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo2() {
+    console.log("Start");
+    await wait(1000);
+    console.log("After 1 second");
+}
+demo2();
+
+// DEMO 3: Fetching data (real API example)
+async function getCatGif() {
+    try {
+        const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY&s=cats');
+        const data = await response.json();
+        console.log(data.data.images.original.url);
+    } catch (error) {
+        console.error("Failed:", error);
+    }
+}
+
+// DEMO 4: Multiple awaits in sequence
+async function sequence() {
+    const user = await getUser(1);      // Waits for this
+    const posts = await getPosts(user.id); // Then this
+    const comments = await getComments(posts[0]); // Then this
+    return comments;
+}
+
+// DEMO 5: Parallel execution (important!)
+async function parallel() {
+    // BAD: waits 3 seconds total (sequential)
+    const a = await wait(1000);
+    const b = await wait(1000);
+    const c = await wait(1000);
+    
+    // GOOD: waits 1 second total (parallel)
+    const [x, y, z] = await Promise.all([
+        wait(1000),
+        wait(1000),
+        wait(1000)
+    ]);
+}

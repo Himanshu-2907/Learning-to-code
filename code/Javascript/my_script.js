@@ -219,9 +219,70 @@ getuser(1,(user)=>{
 
 //Promises
 
-const mypromise=new Promise((resolve,reject)=>{
+const mypromise=new Promise((resolve,reject)=>{  //creates new promise object, pass a fn with parameters(resolve,reject) js parameters
     resolve('Succes')
-})
+})  //Promise here is a constructor
 mypromise.then((data)=>{    //.then runs after a promise is completed
     console.log(data)
 })
+
+
+function getuser(userid){
+    return new Promise((resolve)=>{
+        setTimeout(()=>resolve({id:userid,name:'bob'}),1000)
+    })
+}
+function getposts(userid){
+    return new Promise((resolve)=>{
+        setTimeout(()=> resolve(['Post 1','Post 2']),1000)
+    })   //resolve gives the output 
+}
+function getcomments(posts){
+    return new Promise((resolve)=>{
+        setTimeout(()=> resolve(['Comment 1','Comment 2']),1000)
+    })
+}
+getuser(1)
+.then(user=>
+{
+    console.log('User: ',user)
+    return getposts(user.id)
+
+})
+.then(posts=>
+{
+    console.log('Posts: ',posts)
+    return getcomments(posts[0])
+}
+)
+.then(comments=>{
+    console.log('Comments: ',comments)
+})
+.catch(error=>{
+    console.log('Error: ',error)
+})
+
+
+//next topic is apis and they use the same methods we learned till now
+
+//async await
+
+async function myfunction(){
+    return 'Hello there'
+}
+function myfunction(){
+    return Promise.resolve('Hello there')
+}
+myfunction().then(result=>console.log(result))
+
+async function getuser()
+{
+    const user=await new Promise(resolve=>
+    {
+        setTimeout(()=>resolve({name:'bob'}),1000)
+    }
+    )
+    console.log(user)
+    return user
+}
+getuser()
