@@ -74,7 +74,7 @@ function getComputerChoice(n){
 }
 console.log(getComputerChoice(3))
 
-function getHumanChoice(){
+function getHumanChoice(h){
     if (h==="rock")
         return "rock";
     else if(h==="paper")

@@ -24,7 +24,7 @@ called with new
 
 //prototypal inheritance
 Object.getPrototypeOf(Player.prototype)===Object.prototype
-// plyer.prototype is inhereting for object.prototype
+// player.prototype is inheriting for object.prototype
 console.log(player1.valueOf())
 console.log(player1.hasOwnProperty("ValueOf"))
 console.log(Object.prototype.hasOwnProperty("valueOf"))
@@ -220,7 +220,7 @@ getuser(1,(user)=>{
 //Promises
 
 const mypromise=new Promise((resolve,reject)=>{  //creates new promise object, pass a fn with parameters(resolve,reject) js parameters
-    resolve('Succes')
+    resolve('Success')
 })  //Promise here is a constructor
 mypromise.then((data)=>{    //.then runs after a promise is completed
     console.log(data)
@@ -263,7 +263,7 @@ getuser(1)
 })
 
 
-//next topic is apis and they use the same methods we learned till now
+//next topic is apis and they use the same methods I learned till now
 
 //async await
 
