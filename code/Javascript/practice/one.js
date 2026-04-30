@@ -94,3 +94,48 @@ Object.setPrototypeOf(Person.prototype,Player.prototype)
 Object.getPrototypeOf(Person.prototype)
 const person1=new Person('steve','x')
 person1.sayName()
+
+
+let twosum=function(nums,target)
+{
+    const n=nums.length
+    for(i=0;i<n;i++)
+    {
+        for(j=1;j<n;j++)
+        {
+            if(nums[i]+nums[j]==target)
+                return[i,j]
+        }
+    }
+    return []
+}
+let palindrome=function(x){
+    if(x<0)
+        return false
+    let original=x
+    let reversed=0
+    while(x>0)
+    {
+        let digits=x%10
+        reversed=reversed*10+digits
+        x=Math.floor(x/10)
+    }
+    return original===reversed
+}
+
+let romantoint=function(s)
+{
+    const map={I:1,V:5,X:10,L:50,C:100,D:500,M:1000}
+    let total=0;
+    for(i=0;i<s.length;i++)
+    {
+        const current=map[s[i]]
+        const next=map[s[i+1]]
+        if(next>current)
+        {
+            total-=current
+        }
+        else
+            total+=current
+    }
+}
