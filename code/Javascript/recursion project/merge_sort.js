@@ -7,7 +7,7 @@ function mergesort(arr)
     const right=arr.slice(mid)
     const sortedleft=mergesort(left)
     const sortedright=mergesort(right)
-    return mergesort(sortedleft,sortedright)
+    return merge(sortedleft,sortedright)
 }
 function merge(left,right)
 {
@@ -27,4 +27,19 @@ function merge(left,right)
             rightindex++
         }
     }
+    while(leftindex<left.length)
+    {
+        result.push(left[leftindex])
+        leftindex++
+    }
+    while(rightindex<right.length)
+    {
+        result.push(right[rightindex])
+        rightindex++
+    }
+    return result
 }
+console.log(mergesort([]))
+console.log(mergesort([73]))
+console.log(mergesort([1,2,3,4,5]))
+console.log(mergesort([21,33,234,525,46,253,42,23,299]))
