@@ -1,5 +1,5 @@
 //fibonacci
-function lonumber(num,i=1){
+/* function lonumber(num,i=1){
     if(i<=num)
     {
         console.log(i)
@@ -7,7 +7,7 @@ function lonumber(num,i=1){
     }
 }
 lonumber(10)
-
+// fib func
 function fibs(n)
 {
     if(n<=0) return []
@@ -22,3 +22,5 @@ function fibs(n)
 console.log(fibs(8))
 console.log(fibs(1))
 console.log(fibs(0))
+*/
+
